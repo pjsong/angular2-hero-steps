@@ -1,11 +1,17 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent }  from './app.component';
+import { StructuralDirectivesComponent } from './structural-directives.component';
+import { UnlessDirective } from './unless.directive';
+import { HeavyLoaderComponent } from './heavy-loader.component';
 
 @NgModule({
   imports: [ BrowserModule ],
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
+  declarations: [
+    StructuralDirectivesComponent,
+    UnlessDirective,
+    HeavyLoaderComponent
+  ],
+  bootstrap: [ StructuralDirectivesComponent ]
 })
 export class AppModule { }
