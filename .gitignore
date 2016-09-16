@@ -1,4 +1,5 @@
 dist
+*.log
 .idea
 typings/**
 node_modules
