@@ -1,11 +1,16 @@
-<h1>Radio &amp; Uncheckable Radio</h1>
+<h2>
+  <span class="glyphicon glyphicon-asterisk"></span>
+  Radio &amp; Uncheckable Radio
+  <i class="fa fa-clock-o"></i>
+  {{pageWaiting}}s
+</h2>
 <pre class="card card-block card-header">{{radioModel || 'null'}}</pre>
 <div class="btn-group btn-group-justified">
-  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Homepage">Homepage</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Game">Game</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Fun">Fun</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Member">Member</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Shop">Shop</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Homepage">Homepage</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Game">Game</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Fun">Fun</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Member">Member</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Shop">Shop</label>
 </div>
 <!--<div class="btn-group">-->
   <!--<label class="btn btn-success" [(ngModel)]="radioModel" btnRadio="Homepage"-->

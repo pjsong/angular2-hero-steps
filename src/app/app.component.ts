@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css';
 import '../../public/css/styles.css';
 
 @Component({
