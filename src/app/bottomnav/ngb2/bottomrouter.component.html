@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+<!--<div class="btn-group btn-group-justified">-->
+  <!--<a routerLink="/homepage" routerLinkActive="active" class="btn btn-primary" [ngModel]="radioModel" btnRadio="Homepage">-->
+    <!--Homepage-->
+  <!--</a>-->
+  <!--<a routerLink="/game" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [ngModel]="radioModel" btnRadio="Game">-->
+    <!--Game-->
+  <!--</a>-->
+  <!--<a routerLink="/fun" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [ngModel]="radioModel" btnRadio="Fun">-->
+    <!--Fun-->
+  <!--</a>-->
+  <!--<a routerLink="/member" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [ngModel]="radioModel" btnRadio="Member">-->
+    <!--Member-->
+  <!--</a>-->
+  <!--<a routerLink="/shop" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [ngModel]="radioModel" btnRadio="Shop">-->
+    <!--Shop-->
+  <!--</a>-->
+<!--</div>-->
+<div class="btn-group btn-group-justified">
+  <label routerLink="/homepage" routerLinkActive="active" class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Homepage">
+    Homepage
+  </label>
+  <label routerLink="/game" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Game">
+    Game
+  </label>
+  <label routerLink="/fun" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Fun">
+    Fun
+  </label>
+  <label routerLink="/member" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Member">
+    Member
+  </label>
+  <label routerLink="/shop" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Shop">
+    Shop
+  </label>
+</div>

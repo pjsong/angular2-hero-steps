@@ -1,25 +1,9 @@
 <h2>
   <span class="glyphicon glyphicon-asterisk"></span>
   Radio &amp; Uncheckable Radio
-  <span *ngIf="radioModel!='Homepage'">
+  <!--<span *ngIf="radioModel!='Homepage'">-->
     <i class="fa fa-clock-o"></i>
     {{pageWaiting | number:'3.0-0'}}s
-  </span>
+  <!--</span>-->
 </h2>
-<pre class="card card-block card-header">{{radioModel || 'null'}}</pre>
-<div class="btn-group btn-group-justified">
-  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Homepage">Homepage</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Game">Game</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Fun">Fun</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Member">Member</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel" (click)="resetPageWaiting()" btnRadio="Shop">Shop</label>
-</div>
-<!--<div class="btn-group">-->
-  <!--<label class="btn btn-success" [(ngModel)]="radioModel" btnRadio="Homepage"-->
-         <!--uncheckable>Left</label>-->
-  <!--<label class="btn btn-success" [(ngModel)]="radioModel" btnRadio="Middle"-->
-         <!--uncheckable>Middle</label>-->
-  <!--<label class="btn btn-success" [(ngModel)]="radioModel" btnRadio="Right"-->
-         <!--uncheckable>Right</label>-->
-<!--</div>-->
 
