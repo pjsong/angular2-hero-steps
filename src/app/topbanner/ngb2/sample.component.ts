@@ -1,3 +1,5 @@
+
+
 import { Component } from '@angular/core';
 
 // webpack html imports
@@ -9,6 +11,8 @@ let template = require('./topbanner.component.html');
   styleUrls: ['./topbanner.component.css']
 })
 export class TopBanner {
-  public radioModel:string = 'Homepage';
+  public singleModel:string = '1';
+  public radioModel:string = 'Middle';
+  public checkModel:any = {left: false, middle: true, right: false};
 }
 
