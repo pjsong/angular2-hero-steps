@@ -6,7 +6,7 @@ let template = require('./topbanner.component.html');
 @Component({
   selector: 'topbanner',
   template: template,
-  styleUrls: ['./topbanner.component.css']
+  styleUrls: ['./topbanner.component.scss']
 })
 export class TopBanner {
   public radioModel:string = 'Homepage';
