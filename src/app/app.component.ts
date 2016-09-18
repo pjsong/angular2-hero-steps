@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'font-awesome/css/font-awesome.min.css';
-import '../../public/css/styles.css';
+// import 'bootstrap/dist/css/bootstrap.css';
+// import '../../public/css/styles.css';
+// import 'bootstrap/less/carousel.less';
+// import 'font-awesome/css/font-awesome.min.css';
+
 
 @Component({
   selector: 'my-app',
