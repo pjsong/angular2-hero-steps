@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6">
+  <!--<div class="col-md-12">-->
     <carousel [interval]="myInterval" [noWrap]="noWrapSlides">
       <slide *ngFor="let slidez of slides; let index=index"
              [active]="slidez.active">
@@ -12,26 +12,22 @@
         </div>
       </slide>
     </carousel>
-  </div>
+  <!--</div>-->
 
-  <div class="col-md-6">
-    <button type="button" class="btn btn-info"
-            (click)="addSlide()">Add Slide
-    </button>
-    <!-- issue: removing currently active slide should not lead to white screen? -->
+  <!--<div class="col-md-3">-->
     <!--<button type="button" class="btn btn-info"-->
-    <!--(click)="removeSlide(2)">Remove Slide#3-->
+            <!--(click)="addSlide()">Add Slide-->
     <!--</button>-->
-    <br>
+    <!--<br>-->
 
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" [(ngModel)]="noWrapSlides">
-        Disable Slide Looping
-      </label>
-    </div>
+    <!--<div class="checkbox">-->
+      <!--<label>-->
+        <!--<input type="checkbox" [(ngModel)]="noWrapSlides">-->
+        <!--Disable Slide Looping-->
+      <!--</label>-->
+    <!--</div>-->
 
-    Interval, in milliseconds: <input type="number" class="form-control" [(ngModel)]="myInterval">
-    <br/>Enter a negative number or 0 to stop the interval.
-  </div>
+    <!--Interval, in milliseconds: <input type="number" class="form-control" [(ngModel)]="myInterval">-->
+    <!--<br/>Enter a negative number or 0 to stop the interval.-->
+  <!--</div>-->
 </div>
