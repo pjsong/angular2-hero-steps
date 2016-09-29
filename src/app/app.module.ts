@@ -15,7 +15,7 @@ import { TopBanner } from './topbanner/ngb2/topbanner.component';
 // import { BottomNav } from "./bottomnav/ngb2/bottomnav.component";
 
 import { Homepage} from './homepage/ngb2/homepage.component';
-import { Game } from './game/ngb2/game.component';
+import { GameZombie } from './game/zombie/zombie.component';
 import { Fun } from "./fun/ngb2/fun.component";
 import {Shop} from "./shop/ngb2/shop.component";
 import {Member} from "./member/ngb2/member.component";
@@ -23,7 +23,7 @@ import {BottomRouter} from "./bottomnav/ngb2/bottomrouter.component";
 
 @NgModule({
   imports: [ BrowserModule, FormsModule, routing, Ng2BootstrapModule ],
-  declarations: [ AppComponent, TopBanner, BottomRouter, Homepage, Game, Fun, Member, Shop  ],
+  declarations: [ AppComponent, TopBanner, BottomRouter, Homepage, GameZombie, Fun, Member, Shop  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
