@@ -94,10 +94,10 @@ h1.title {
 .game-intro {
   margin-bottom: 0;
 }
-
-.game-explanation {
-  margin-top: 25px;
-}
+//
+//.game-explanation {
+//  margin-top: 25px;
+//}
 
 .tile {
   width: 50.25px;
@@ -128,7 +128,7 @@ h1.title {
 }
 
 .game-container {
-  margin-top: 40px;
+  margin-top: 18px;
   position: relative;
   padding: 15px;
   cursor: default;
@@ -139,7 +139,7 @@ h1.title {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  height: auto;
+  height: 74.8vh;
   display: inline-block;
 }
 

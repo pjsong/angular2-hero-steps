@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
 import {Router} from "@angular/router";
 
-const waitingCnt = 10;
+const waitingCnt = 999;
 @Component({
   selector: 'bottomrouter',
   templateUrl: './bottomrouter.component.html',

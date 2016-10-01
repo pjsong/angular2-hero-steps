@@ -1,6 +1,6 @@
 <div class="container">
   <div class="game-board">
-    <div class="heading">
+    <!--<div class="heading">
       <h1 class="title">Z-finder</h1>
       <label class="select-box">
         <select name="grid" [ngModel]="selectedGrid" (ngModelChange)="gridChange($event)">
@@ -11,9 +11,18 @@
           <option [value]="20">20 x 20</option>
         </select>
       </label>
-    </div>
-    <p class="game-intro">Find all hidden zombie without clicking on them ...<strong>Till the last tile!</strong></p>
-
+    </div>-->
+    <p class="game-intro">Find all hidden zombie without clicking on them ...
+      <strong>Till the last tile!</strong>
+      <strong class="important">How to play:</strong> Start by clicking on arbitary tile, revealed tiles gives you hint surrounded zombie <strong>simple</strong> & <strong> silly </strong>
+    </p>
+    <!--<p class="game-explanation">-->
+      <!--<strong class="important">How to play:</strong> Start by clicking on arbitary tile, revealed tiles gives you hint surrounded zombie <strong>simple</strong> & <strong> silly </strong>-->
+    <!--</p>-->
+    <!--<p>-->
+      <!--Created by-->
+      <!--<a href="http://hiteshbalar.com" target="_blank">Hitesh Balar.</a>-->
+    <!--</p>-->
     <div class="game-container">
       <div class="{{'game-message game-' + gameResult.text}}" *ngIf="gameResult.text">
         <p>{{gameResult.text == 'won' ? 'Congratulations you won !' : 'You loss !'}}</p>
@@ -36,13 +45,6 @@
         </div>
       </div>
     </div>
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> Start by clicking on arbitary tile, revealed tiles gives you hint surrounded zombie <strong>simple</strong> & <strong> silly </strong>
-    </p>
-    <hr>
-    <p>
-      Created by
-      <!--<a href="http://hiteshbalar.com" target="_blank">Hitesh Balar.</a>-->
-    </p>
+
   </div>
 </div>
