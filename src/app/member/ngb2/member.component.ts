@@ -5,7 +5,8 @@ let template = require('./member.component.html');
 
 @Component({
   selector: 'member',
-  template: template
+  template: template,
+  styleUrls: ['./member.component.scss']
 })
 export class Member {
 

@@ -5,7 +5,8 @@ let template = require('./shop.component.html');
 
 @Component({
   selector: 'shop',
-  template: template
+  template: template,
+  styleUrls: ['./shop.component.scss']
 })
 export class Shop {
 
