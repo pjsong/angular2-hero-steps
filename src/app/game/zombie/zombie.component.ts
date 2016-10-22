@@ -15,10 +15,12 @@ export class GameZombie implements OnInit {
   private grid10 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   private board: coords[][] = [];
   private count = 0;
+  private intervalCounter: any;
   private gameResult = {
     text: "",
     won: false,
-    over: false
+    over: false,
+    timeElapsed: 0,
   };
 
   private selectedGrid = 10;
@@ -33,6 +35,7 @@ export class GameZombie implements OnInit {
   }
 
   boardInit() {
+    this.gameResult.timeElapsed == 0
     this.board = [];
     for (let i = 0, l = this.cols; i < l; i++) {
       this.board[i] = [];
@@ -87,10 +90,20 @@ export class GameZombie implements OnInit {
 //   };
 
   tileClick(e:any, i:number, j:number) {
+    if(this.gameResult.timeElapsed == 0){
+        this.gameResult.timeElapsed ++;
+        this.intervalCounter = (setInterval(()=>{
+        this.gameResult.timeElapsed ++ ;
+      },1000));
+    }
     if (!this.board[i][j].isFlag) {
       if (this.board[i][j].isMine) {
+        console.log("lose now")
+        clearInterval(this.intervalCounter );
         this.gameResult.over = true;
         this.gameResult.text = "over";
+        this.bottomRouter.resetPageWaiting();
+        return;
       } else {
         this.boardReveal(i, j);
       }
@@ -103,11 +116,13 @@ export class GameZombie implements OnInit {
         }
       }
       if (unRevealed === this.mines) {
+        console.log("won now")
+        clearInterval(this.intervalCounter );
         this.gameResult.won = true;
         this.gameResult.text = "won";
+        this.bottomRouter.resetPageWaiting();
       }
     }
-    this.bottomRouter.resetPageWaiting();
   }
 
   boardReveal(row: number, col: number) {
@@ -136,7 +151,8 @@ export class GameZombie implements OnInit {
     this.gameResult = {
       text: undefined,
       won: false,
-      over: false
+      over: false,
+      timeElapsed: 0,
     };
     this.boardInit();
     this.setupMines();
@@ -151,26 +167,27 @@ export class GameZombie implements OnInit {
     }
 
   }
-
-  gridChange(value: number) {
-    if (value != 0 && value != this.selectedGrid) {
-      this.selectedGrid = value;
-      this.grid10 = [];
-      for (let i = 0; i < this.selectedGrid; i++) {
-        this.grid10.push(i);
-      };
-      this.rows = this.selectedGrid;
-      this.cols = this.selectedGrid;
-      this.mines = this.selectedGrid;
-      this.gameResult = {
-        text: undefined,
-        won: false,
-        over: false
-      };
-      this.boardInit();
-      this.setupMines();
-    }
-  }
+  //
+  // gridChange(value: number) {
+  //   if (value != 0 && value != this.selectedGrid) {
+  //     this.selectedGrid = value;
+  //     this.grid10 = [];
+  //     for (let i = 0; i < this.selectedGrid; i++) {
+  //       this.grid10.push(i);
+  //     };
+  //     this.rows = this.selectedGrid;
+  //     this.cols = this.selectedGrid;
+  //     this.mines = this.selectedGrid;
+  //     this.gameResult = {
+  //       text: undefined,
+  //       won: false,
+  //       over: false,
+  //       timeElapsed: 0,
+  //     };
+  //     this.boardInit();
+  //     this.setupMines();
+  //   }
+  // }
 }
 
 class coords {

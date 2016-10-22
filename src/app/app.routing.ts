@@ -6,6 +6,8 @@ import {GameZombie} from "./game/zombie/zombie.component";
 import {Fun} from "./fun/ngb2/fun.component";
 import {Member} from "./member/ngb2/member.component";
 import {Shop} from "./shop/ngb2/shop.component";
+import {PaginationDemoComponent} from "./shop/ngb2/pagination.component";
+// import {Angular2Pagination} from "./thirdparty/pagination/example.component";
 
 const appRoutes: Routes = [
   {
@@ -32,6 +34,10 @@ const appRoutes: Routes = [
   {
     path: 'shop',
     component: Shop
+  },
+  {
+    path: 'pagination',
+    component: PaginationDemoComponent
   }
 ];
 

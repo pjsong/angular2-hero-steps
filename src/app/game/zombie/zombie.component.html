@@ -16,13 +16,10 @@
       <strong>Till the last tile!</strong>
       <strong class="important">How to play:</strong> Start by clicking on arbitary tile, revealed tiles gives you hint surrounded zombie <strong>simple</strong> & <strong> silly </strong>
     </p>
-    <!--<p class="game-explanation">-->
-      <!--<strong class="important">How to play:</strong> Start by clicking on arbitary tile, revealed tiles gives you hint surrounded zombie <strong>simple</strong> & <strong> silly </strong>-->
-    <!--</p>-->
-    <!--<p>-->
-      <!--Created by-->
-      <!--<a href="http://hiteshbalar.com" target="_blank">Hitesh Balar.</a>-->
-    <!--</p>-->
+    <p class="game-explanation">
+      <strong class="important">Time elapsed: {{gameResult.timeElapsed}}</strong>
+    </p>
+
     <div class="game-container">
       <div class="{{'game-message game-' + gameResult.text}}" *ngIf="gameResult.text">
         <p>{{gameResult.text == 'won' ? 'Congratulations you won !' : 'You loss !'}}</p>
