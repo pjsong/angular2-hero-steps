@@ -7,6 +7,7 @@ import {Fun} from "./fun/ngb2/fun.component";
 import {Member} from "./member/ngb2/member.component";
 import {Shop} from "./shop/ngb2/shop.component";
 import {PaginationDemoComponent} from "./shop/ngb2/pagination.component";
+import {Menu} from "./shop/thirdparty/menu.component";
 // import {Angular2Pagination} from "./thirdparty/pagination/example.component";
 
 const appRoutes: Routes = [
@@ -38,6 +39,10 @@ const appRoutes: Routes = [
   {
     path: 'pagination',
     component: PaginationDemoComponent
+  },
+  {
+    path: 'menu',
+    component: Menu,
   }
 ];
 

@@ -19,6 +19,7 @@ import {BottomRouter} from "./bottomnav/ngb2/bottomrouter.component";
 import {Words} from "./fun/ngb2/words/words.component";
 
 import {PaginationDemoComponent} from "./shop/ngb2/pagination.component";
+import { Menu } from "./shop/thirdparty/menu.component"
 // import {PagerComponent} from 'ng2-bootstrap/components/pagination/pager.component'
 
 // import {Pagination} from "./thirdparty/pagination/pagination.component";
@@ -28,7 +29,7 @@ import {PaginationDemoComponent} from "./shop/ngb2/pagination.component";
 
 @NgModule({
   imports: [ BrowserModule, FormsModule, RoutingModule, Ng2BootstrapModule ],
-  declarations: [ AppComponent, TopBanner, BottomRouter, Homepage, GameZombie, Fun, Member, Shop, Words, PaginationDemoComponent ],
+  declarations: [ AppComponent, TopBanner, BottomRouter, Homepage, GameZombie, Fun, Member, Shop, Words, PaginationDemoComponent, Menu ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
