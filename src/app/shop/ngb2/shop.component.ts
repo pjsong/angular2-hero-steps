@@ -8,7 +8,7 @@ let template = require('./shop.component.html');
   template: template,
   styleUrls: ['./shop.component.scss']
 })
-export class Shop {
+export class ShopComponent {
 
 }
 
