@@ -1,0 +1,46 @@
+<div class="btn-group btn-group-justified">
+  <nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="navCollapsed = !navCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
+        All Categories
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" [ngClass]="!navCollapsed && 'in'" >
+      <ul class="nav navbar-nav">
+        <li><a routerLink="pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">active Link</a></li>
+        <li dropdown (onToggle)="toggled($event)">
+          <a dropdownToggle>Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Action</a></li>
+            <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>
+            <li class="divider" dropdown-divider></li>
+            <li><a [routerLink]='["cat","SomethingElse"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Something else here</a></li>
+            <li><a >Separated link</a></li>
+            <li><a [routerLink]='["cat","oneMoreLink"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">One more separated link</a></li>
+          </ul>
+        </li>
+
+        <li dropdown>
+          <a dropdownToggle>Just a clone<span class='caret'></span></a>
+          <ul class="dropdown-menu" >
+            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">ActionClone</a></li>
+            <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>
+            <li><a [routerLink]='["cat","somethingElse"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Something else here</a></li>
+            <li><a >Separated link</a></li>
+            <li><a [routerLink]='["cat","onceMore"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>
+

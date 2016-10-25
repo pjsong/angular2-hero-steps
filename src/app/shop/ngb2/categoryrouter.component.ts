@@ -2,7 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -11,9 +11,11 @@ import {Router} from "@angular/router";
   // styleUrls: ['./bottomrouter.component.scss']
 })
 export class CategoryRouter implements OnInit{
-  public radioModel:string = 'Homepage';
+  public catName:string = 'Homepage';
 
-  constructor(private router:Router){}
+  constructor(private router:ActivatedRoute){
+    this.catName = router.snapshot.params['name'];
+  }
 
   ngOnInit(){
 

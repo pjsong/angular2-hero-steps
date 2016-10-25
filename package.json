@@ -28,6 +28,7 @@
     "ng2-bootstrap": "^1.1.5"
   },
   "devDependencies": {
+    "angular2-router-loader": "^0.3.3",
     "angular2-template-loader": "^0.4.0",
     "bootstrap-sass": "^3.3.7",
     "css-loader": "^0.23.1",
