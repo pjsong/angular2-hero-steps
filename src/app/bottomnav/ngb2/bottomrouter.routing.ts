@@ -9,6 +9,8 @@ import {ShopMenuComponent} from "../../shop/shopmenu/shopmenu.component";
 import {PaginationDemoComponent} from "../../shop/ngb2/pagination.component";
 import {_404Component} from "../../common/404";
 import {CategoryRouter} from "../../shop/ngb2/categoryrouter.component";
+import {ShopComponent} from "../../shop/shop/shop.component";
+import ProductDetailComponent from "../../shop/productdetail/product-detail";
 
 
 const appRoutes: Routes = [
@@ -34,13 +36,27 @@ const appRoutes: Routes = [
     component: MemberComponent
   },
   {
-    path: 'shop',
-    // loadChildren: '../../shop/shopmenu/shopmenu.module#ShopMenuModule',
+    path: 'shopmenu',
     component: ShopMenuComponent,
     children: [
-      {path: '', redirectTo: 'pagination', pathMatch: 'full'},
-      {path: 'pagination',  component: PaginationDemoComponent},
-      {path: 'cat/:name', component: CategoryRouter}
+      {path: '', redirectTo: 'shop', pathMatch: 'full'},
+      {
+        path: 'shop',
+        loadChildren: '../../shop/shop/shop.module#ShopModule',
+        // component: ShopComponent,
+        // children: [
+        //   {
+        //     path: '', redirectTo: 'products/0', pathMatch: 'full'
+        //   },
+        //   {
+        //     path: 'products/:name',
+        //     component: ProductDetailComponent,
+        //   }
+        // ]
+      },
+
+      {path: 'cat/:name', component: CategoryRouter},
+
     ]
   },
   {

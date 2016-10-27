@@ -1,7 +1,8 @@
 
 
-    import { Component } from '@angular/core';
+    import {Component, OnInit} from '@angular/core';
     import { PaginationModule } from 'ng2-bootstrap/components/pagination'
+    import {ProductService, Product} from "../../services/product-service";
     // webpack html imports
     let template = require('./pagination.component.html');
 
@@ -9,13 +10,13 @@
       selector: 'pagination-demo',
       template: template
     })
-    export class PaginationDemoComponent {
+    export class PaginationDemoComponent implements OnInit{
       private slides:Array<any> = [];
       public totalItems:number = 64; //total number of items in all pages
       public rotate:boolean;//current page in the middle of pagelist
       public currentPage:number = 1;
       public itemsPerPage: number = 4;  //maximum number of items per page. If value less than 1 will display all items on one page
-
+      products: Product[] = [];
       //the maximum buttons to show
       public maxSize:number = 5;
       public bigTotalItems:number = 175;
@@ -24,7 +25,7 @@
       public setPage(pageNo:number):void {
         this.currentPage = pageNo;
       };
-      constructor () {
+      constructor (private productService: ProductService) {
         this.slides.push(
           {image:'http://www.angulartypescript.com/wp-content/uploads/2016/03/car1.jpg',text:'BMW 1'},
           {image:'http://www.angulartypescript.com/wp-content/uploads/2016/03/car2.jpg',text:'BMW 2'},
@@ -40,6 +41,11 @@
         this.totalItems = this.slides.length;
         this.itemsPerPage = 1;// one item per page
       }
+
+      public ngOnInit(): void{
+        this.products = this.productService.getProducts();
+      }
+
       public pageChanged(event:any):void {
         console.log('Page changed to: ' + event.page);
         console.log('Number items per page: ' + event.itemsPerPage);

@@ -8,14 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
+      <a class="navbar-brand" routerLink="shop" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
         All Categories
       </a>
     </div>
 
     <div class="collapse navbar-collapse" [ngClass]="!navCollapsed && 'in'" >
       <ul class="nav navbar-nav">
-        <li><a routerLink="pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">active Link</a></li>
+        <li><a routerLink="shop/pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">active Link</a></li>
         <li dropdown (onToggle)="toggled($event)">
           <a dropdownToggle>Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="simple-dropdown">

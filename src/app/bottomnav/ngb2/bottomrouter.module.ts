@@ -14,12 +14,24 @@ import {ShopMenuComponent} from "../../shop/shopmenu/shopmenu.component";
 import {PaginationDemoComponent} from "../../shop/ngb2/pagination.component";
 import {CategoryRouter} from "../../shop/ngb2/categoryrouter.component";
 import {_404Component} from "../../common/404";
+import {ProductService} from "../../services/product-service";
+import ProductDetailComponent from "../../shop/productdetail/product-detail";
+import ProductItemComponent from "../../shop/productitem/product-item";
+import StarsComponent from "../../shop/stars/stars";
+import {ShopComponent} from "../../shop/shop/shop.component";
+import {ShopRoutingModule} from "../../shop/shop/shop.routing";
+import {ShopModule} from "../../shop/shop/shop.module";
 
 
 @NgModule({
-  imports: [ BrowserModule, Ng2BootstrapModule, BottomRouterRoutingModule,  ],
+  imports: [ BrowserModule, Ng2BootstrapModule, BottomRouterRoutingModule,  ShopModule],
   declarations: [ BottomRouter, _404Component, Homepage, GameZombie, Fun, MemberComponent,  Words,
-    ShopMenuComponent, PaginationDemoComponent,CategoryRouter ],
+    ShopMenuComponent, CategoryRouter
+    // ProductDetailComponent, ProductItemComponent, StarsComponent, ShopComponent
+  ],
+  providers: [
+    ProductService,
+  ],
   exports:[BottomRouter],
 })
 export class BottomRouterModule { }

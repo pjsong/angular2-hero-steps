@@ -8,7 +8,7 @@ const waitingCnt = 999;
 @Component({
   selector: 'bottomrouter',
   templateUrl: './bottomrouter.component.html',
-  styleUrls: ['./bottomrouter.component.scss']
+  styleUrls: ['./bottomrouter.component.scss'],
 })
 export class BottomRouter implements OnInit, OnDestroy{
   public radioModel:string = 'Homepage';
