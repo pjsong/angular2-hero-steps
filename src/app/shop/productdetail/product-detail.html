@@ -1,12 +1,17 @@
-<div class="thumbnail">
+<div class="container-fluid">
+  <div class="thumbnail col-sm-4 col-lg-4 col-md-4">
   <img src="{{product.imgUrl}}">
+
+  </div>
+  <div class="col-sm-8 col-lg-8 col-md-8">
   <div>
-    <h4 class="pull-right">{{ product.price }}</h4>
-    <h4>{{ product.title }}</h4>
+    <!--<h4 class="pull-right">{{ product.price }}</h4>-->
+    <h4>{{ product.title }}: {{ product.price }}</h4>
     <p>{{ product.description }}</p>
   </div>
   <div class="ratings">
     <!--<p class="pull-right">{{ reviews.length }} reviews</p>-->
     <p><auction-stars [rating]="product.rating" ></auction-stars></p>
+  </div>
   </div>
 </div>

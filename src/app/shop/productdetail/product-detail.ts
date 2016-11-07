@@ -5,7 +5,7 @@ import { Product, Review, ProductService } from '../../services/product-service'
 
 @Component({
   selector: 'auction-product-page',
-  styles: ['auction-stars.large {font-size: 24px;}'],
+  styles: ['auction-stars.large {font-size: 24px;}.thumbnail{background-color: #2e6da4;}'],
   templateUrl: './product-detail.html'
 })
 export default class ProductDetailComponent implements OnInit {
