@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Product} from '../../services/product-service';
+import {ShopComponent} from "../shop/shop.component";
+import {BottomRouter} from "../../bottomnav/ngb2/bottomrouter.component";
 
 @Component({
   selector: 'auction-product-item',
@@ -8,4 +10,9 @@ import {Product} from '../../services/product-service';
 })
 export default class ProductItemComponent {
   @Input() product: Product;
+  constructor(private shop: BottomRouter){}
+
+  public resetPageWaiting(){
+    this.shop.resetPageWaiting();
+  }
 }

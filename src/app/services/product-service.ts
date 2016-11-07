@@ -23,7 +23,7 @@ export class Review {
   }
 }
 
-const IMG_PREFIX='http://www.angulartypescript.com/wp-content/uploads/2016/03/car';
+const IMG_PREFIX='http://172.18.0.3/static/images/vendor/front/shoptest/car';
 
 @Injectable()
 export class ProductService {

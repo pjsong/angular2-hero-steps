@@ -13,14 +13,15 @@ import ProductDetailComponent from "../productdetail/product-detail";
 import ProductItemComponent from "../productitem/product-item";
 import StarsComponent from "../stars/stars";
 import {ProductService} from "../../services/product-service";
+import {BottomRouter} from "../../bottomnav/ngb2/bottomrouter.component";
 
 
 @NgModule({
   imports: [CommonModule, FormsModule, Ng2BootstrapModule, ShopRoutingModule],
   // providers:[{provide: APP_BASE_HREF, useValue:'/vending/shop'}],
-  declarations: [ PaginationDemoComponent, ProductDetailComponent, ProductItemComponent, StarsComponent, ShopComponent ],
+  declarations: [ PaginationDemoComponent, ProductDetailComponent, ProductItemComponent, StarsComponent, ShopComponent],
     providers: [
-      ProductService,
+      ProductService, BottomRouter
     ],
   exports: [ShopComponent]
 })

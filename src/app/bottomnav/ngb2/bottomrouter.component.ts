@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -32,5 +32,6 @@ export class BottomRouter implements OnInit, OnDestroy{
   }
   resetPageWaiting(){
     this.pageWaiting = waitingCnt;
+    console.log("reset triggered" + this.pageWaiting);
   }
 }

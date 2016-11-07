@@ -8,18 +8,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="shop" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
+      <a (click)="loadList('AllCategory')" class="navbar-brand" routerLink="shop" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
         All Categories
       </a>
     </div>
 
     <div class="collapse navbar-collapse" [ngClass]="!navCollapsed && 'in'" >
       <ul class="nav navbar-nav">
-        <li><a routerLink="shop/pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">active Link</a></li>
+        <li><a (click)="loadList(pagination)" routerLink="shop/pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">shop/Pagination</a></li>
         <li dropdown (onToggle)="toggled($event)">
           <a dropdownToggle>Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
-            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Action</a></li>
+            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">cat/Action</a></li>
             <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>
             <li class="divider" dropdown-divider></li>
             <li><a [routerLink]='["cat","SomethingElse"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Something else here</a></li>
@@ -28,8 +28,8 @@
           </ul>
         </li>
 
-        <li dropdown>
-          <a dropdownToggle>Just a clone<span class='caret'></span></a>
+        <li dropdown (onToggle)="toggled($event)">
+          <a dropdownToggle (onToggle)="toggled($event)">Just a clone<span class='caret'></span></a>
           <ul class="dropdown-menu" >
             <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">ActionClone</a></li>
             <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>

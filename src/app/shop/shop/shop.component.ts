@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Product, ProductService} from "../../services/product-service";
-
+import {BottomRouter} from "../../bottomnav/ngb2/bottomrouter.component";
 // webpack html imports
 let template = require('./shop.component.html');
 
@@ -21,7 +21,7 @@ export class ShopComponent implements OnInit{
   // public bigTotalItems:number = 175;
   // public bigCurrentPage:number = 1;
 
-  constructor(private productService: ProductService){}
+  constructor(private bottomRouter: BottomRouter, private productService: ProductService){}
 
   public getProducts(): void{
     this.products = this.productService.getProducts();
@@ -29,12 +29,18 @@ export class ShopComponent implements OnInit{
   public ngOnInit(): void{
     this.getProducts();
     this.totalItems = this.products.length;
+    this.resetPageWaiting();
+  }
+
+  public resetPageWaiting(){
+    this.bottomRouter.resetPageWaiting();
   }
 
   // public setPage(pageNo:number):void {
   //   this.currentPage = pageNo;
   // };
   public pageChanged(event:any):void {
+    this.bottomRouter.resetPageWaiting();
     console.log('Page changed to: ' + event.page);
     console.log('Number items per page: ' + event.itemsPerPage);
     this.currentPage = event.page;
