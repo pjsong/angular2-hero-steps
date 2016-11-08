@@ -9,17 +9,13 @@ import { Fun } from "../../fun/ngb2/fun.component";
 import { MemberComponent } from "../../member/ngb2/member.component";
 import {BottomRouter} from "../../bottomnav/ngb2/bottomrouter.component";
 import {Words} from "../../fun/ngb2/words/words.component";
-import {ShopMenuComponent} from "../../shop/shopmenu/shopmenu.component";
-import {CategoryRouter} from "../../shop/ngb2/categoryrouter.component";
 import {_404Component} from "../../common/404";
 import {ProductService} from "../../services/product-service";
-import {ShopModule} from "../../shop/shop/shop.module";
 
 
 @NgModule({
-  imports: [ BrowserModule, Ng2BootstrapModule, BottomRouterRoutingModule,  ShopModule],
+  imports: [ BrowserModule, Ng2BootstrapModule, BottomRouterRoutingModule],
   declarations: [ BottomRouter, _404Component, Homepage, GameZombie, Fun, MemberComponent,  Words,
-    ShopMenuComponent, CategoryRouter
   ],
   providers: [
     ProductService,

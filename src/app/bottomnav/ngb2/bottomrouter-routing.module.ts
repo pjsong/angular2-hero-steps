@@ -7,6 +7,7 @@ import {MemberComponent} from "../../member/ngb2/member.component";
 import {ShopMenuComponent} from "../../shop/shopmenu/shopmenu.component";
 import {CategoryRouter} from "../../shop/ngb2/categoryrouter.component";
 import {_404Component} from "../../common/404";
+import {PreloadSelectedModules} from "../../selective-preload-strategy";
 
 const appRoutes: Routes = [
   {
@@ -31,42 +32,26 @@ const appRoutes: Routes = [
     component: MemberComponent
   },
   {
-    path: 'shopmenu',
-    component: ShopMenuComponent,
-    children: [
-      {path: '', redirectTo: 'shop', pathMatch: 'full'},
-      {
-        path: 'shop',
-        loadChildren: '../../shop/shop/shop.module#ShopModule',
-        // component: ShopComponent,
-        // children: [
-        //   {
-        //     path: '', redirectTo: 'products/0', pathMatch: 'full'
-        //   },
-        //   {
-        //     path: 'products/:name',
-        //     component: ProductDetailComponent,
-        //   }
-        // ]
-      },
-
-      {path: 'cat/:name', component: CategoryRouter},
-
-    ]
+    path: '**', component: _404Component
   },
   {
-    path: '**', component: _404Component
+    path: 'shopmenu',
+    loadChildren: '../../shop/shopmenu/shopmenu.module#ShopmenuModule',
+    data: {
+      preload: true
+    }
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes,{ preloadingStrategy: PreloadSelectedModules })
   ],
   exports: [
     RouterModule
   ],
   providers: [
+    PreloadSelectedModules,
   ]
 })
 export class BottomRouterRoutingModule {}

@@ -14,7 +14,7 @@ export class ShopMenuComponent implements OnInit {
   public menuItem:string = 'All';
   public items:Array<string> = ['first', 'second', 'third'];
 
-  constructor(private bottomRouter: BottomRouter, private router:ActivatedRoute){
+  constructor(private bottomRouter: BottomRouter, private router:ActivatedRoute){ //private bottomRouter: BottomRouter,
 
   }
 
