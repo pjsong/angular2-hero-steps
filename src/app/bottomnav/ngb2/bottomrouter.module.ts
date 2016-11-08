@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'
-import { BottomRouterRoutingModule } from './bottomrouter.routing';
+import { BottomRouterRoutingModule } from './bottomrouter-routing.module';
 import {Ng2BootstrapModule} from 'ng2-bootstrap/ng2-bootstrap';
 
 import { Homepage} from '../../homepage/ngb2/homepage.component';
