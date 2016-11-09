@@ -41,6 +41,13 @@ const appRoutes: Routes = [
       preload: true
     }
   },
+  {
+    path: 'crisis-center',
+    loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
+    data: {
+      preload: true
+    }
+  },
 ];
 
 @NgModule({
