@@ -16,26 +16,26 @@ import { CrisisDetailResolve }   from './crisis-detail-resolve.service';
       {
         path: '',
         component: CrisisCenterComponent,
-        children: [
-          {
-            path: '',
-            component: CrisisListComponent,
-            children: [
-              {
-                path: ':id',
-                component: CrisisDetailComponent,
-                canDeactivate: [CanDeactivateGuard],
-                resolve: {
-                  crisis: CrisisDetailResolve
-                }
-              },
-              {
-                path: '',
-                component: CrisisCenterHomeComponent
-              }
-            ]
-          }
-        ]
+        // children: [
+        //   {
+        //     path: '',
+        //     component: CrisisListComponent,
+        //     children: [
+        //       {
+        //         path: ':id',
+        //         component: CrisisDetailComponent,
+        //         canDeactivate: [CanDeactivateGuard],
+        //         resolve: {
+        //           crisis: CrisisDetailResolve
+        //         }
+        //       },
+        //       {
+        //         path: '',
+        //         component: CrisisCenterHomeComponent
+        //       }
+        //     ]
+        //   }
+        // ]
       }
     ])
   ],

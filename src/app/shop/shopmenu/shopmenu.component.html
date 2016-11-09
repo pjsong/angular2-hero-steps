@@ -14,7 +14,7 @@
 
     <div class="collapse navbar-collapse" [ngClass]="!navCollapsed && 'in'" >
       <ul class="nav navbar-nav">
-        <li><a (click)="loadList(pagination)" routerLink="shop/pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">shop/Pagination</a></li>
+        <li><a (click)="loadList(pagination)" routerLink="pagination" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">shop/Pagination</a></li>
         <li dropdown (onToggle)="toggled($event)">
           <a dropdownToggle>Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="simple-dropdown">

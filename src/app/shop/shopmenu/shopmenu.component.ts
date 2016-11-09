@@ -14,7 +14,7 @@ export class ShopMenuComponent implements OnInit {
   public menuItem:string = 'All';
   public items:Array<string> = ['first', 'second', 'third'];
 
-  constructor(private router:ActivatedRoute){ //private bottomRouter: BottomRouter,
+  constructor(private bottomRouter: BottomRouter, private router:ActivatedRoute){ //
 
   }
 
@@ -22,7 +22,7 @@ export class ShopMenuComponent implements OnInit {
   }
 
   private resetPageWaiting(){
-    // this.bottomRouter.resetPageWaiting();
+    this.bottomRouter.resetPageWaiting();
   }
 
   public toggled(open:boolean):void {

@@ -19,8 +19,8 @@ import {ShopmenuRoutingModule} from "./shopmenu-routing.module";
   // providers:[{provide: APP_BASE_HREF, useValue:'/vending/shop'}],
   declarations: [ShopMenuComponent, PaginationDemoComponent, ProductDetailComponent, ProductItemComponent, StarsComponent, ShopComponent],
   providers: [
-      ProductService, //BottomRouter
+      ProductService, BottomRouter
   ],
-  // exports: [ShopMenuComponent]
+  exports: [ShopMenuComponent]
 })
 export class ShopmenuModule { }

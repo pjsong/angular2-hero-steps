@@ -11,7 +11,7 @@ const waitingCnt = 999;
   styleUrls: ['./bottomrouter.component.scss'],
 })
 export class BottomRouter implements OnInit, OnDestroy{
-  public pageWaiting: number = waitingCnt;
+  @Input() pageWaiting: number = waitingCnt;
 
   constructor(private router:Router){}
 

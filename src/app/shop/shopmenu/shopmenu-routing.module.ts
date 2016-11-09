@@ -11,18 +11,23 @@ const shopmenuRoutes:Routes = [{
   children: [
     {
       path: '',
+      redirectTo: 'shop',
+      pathMatch: 'full',
+    },{
+      path: 'shop',
       component: ShopComponent,
-      children: [
-        {
-          path: 'pagination',
-          component: PaginationDemoComponent
-        },
-        {
-          path: 'products/:id',
-          component: ProductDetailComponent,
-        },
-      ]
-    }
+      pathMatch: 'full',
+      // children: [
+      // ]
+    },
+    {
+      path: 'pagination',
+      component: PaginationDemoComponent
+    },
+    {
+      path: 'shop/products/:id',
+      component: ProductDetailComponent,
+    },
   ]
 }]
 
