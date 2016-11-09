@@ -1,19 +1,22 @@
 <router-outlet></router-outlet>
 <br>
 <div class="btn-group btn-group-justified">
-  <label routerLink="/homepage" routerLinkActive="active" class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Homepage">
+  <label routerLink="/homepage" routerLinkActive="active" class="btn btn-primary" >
     Homepage
   </label>
-  <label routerLink="/game" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Game">
+  <label routerLink="/game" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" >
     Game
   </label>
-  <label routerLink="/fun" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Fun">
-    Fun
-  </label>
-  <label routerLink="/member" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Member">
+  <!--<label routerLink="/fun" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()">-->
+    <!--Fun-->
+  <!--</label>-->
+  <label routerLink="/member" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" >
     Member
   </label>
-  <label routerLink="/shopmenu" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" [(ngModel)]="radioModel" btnRadio="Shop">
+  <label routerLink="/shopmenu" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" >
     Shop
+  </label>
+  <label routerLink="/crisis-center" routerLinkActive="active" class="btn btn-primary" (click)="resetPageWaiting()" >
+    crisis-center
   </label>
 </div>

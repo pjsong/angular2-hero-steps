@@ -11,7 +11,6 @@ const waitingCnt = 999;
   styleUrls: ['./bottomrouter.component.scss'],
 })
 export class BottomRouter implements OnInit, OnDestroy{
-  public radioModel:string = 'Homepage';
   public pageWaiting: number = waitingCnt;
 
   constructor(private router:Router){}
@@ -22,7 +21,6 @@ export class BottomRouter implements OnInit, OnDestroy{
         this.pageWaiting -- ;
       }
       if(!this.router.isActive("homepage", true) && this.pageWaiting == 0){
-        this.radioModel= 'Homepage';
         this.router.navigate(['/homepage']);
       }
     },1000)

@@ -23,17 +23,15 @@ const appRoutes: Routes = [
     path: 'game',
     component: GameZombie
   },
-  {
-    path: 'fun',
-    component: Fun
-  },
+  // {
+  //   path: 'fun',
+  //   component: Fun
+  // },
   {
     path: 'member',
     component: MemberComponent
   },
-  {
-    path: '**', component: _404Component
-  },
+
   {
     path: 'shopmenu',
     loadChildren: '../../shop/shopmenu/shopmenu.module#ShopmenuModule',
@@ -43,10 +41,13 @@ const appRoutes: Routes = [
   },
   {
     path: 'crisis-center',
-    loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule',
+    loadChildren: '../../crisis-center/crisis-center.module#CrisisCenterModule',
     data: {
       preload: true
     }
+  },
+  {
+    path: '**', component: _404Component
   },
 ];
 
