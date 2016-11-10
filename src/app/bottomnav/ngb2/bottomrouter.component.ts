@@ -1,4 +1,4 @@
-import {Component, OnInit, OnDestroy, Input} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input, HostListener} from '@angular/core';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -11,7 +11,7 @@ const waitingCnt = 999;
   styleUrls: ['./bottomrouter.component.scss'],
 })
 export class BottomRouter implements OnInit, OnDestroy{
-  @Input() pageWaiting: number = waitingCnt;
+  pageWaiting: number = waitingCnt;
 
   constructor(private router:Router){}
 
@@ -28,8 +28,9 @@ export class BottomRouter implements OnInit, OnDestroy{
   ngOnDestroy(){
     this.pageWaiting = waitingCnt;
   }
-  resetPageWaiting(){
+
+  @HostListener('document:click',['$event'])
+  onClick(ev:Event){
     this.pageWaiting = waitingCnt;
-    console.log("reset triggered" + this.pageWaiting);
   }
 }

@@ -12,7 +12,7 @@ import { BottomRouterModule } from "./bottomnav/ngb2/bottomrouter.module";
 
 @NgModule({
   imports: [ BrowserModule, BottomRouterModule],
-  declarations: [ AppComponent, TopBanner],
+  declarations: [ AppComponent],
   bootstrap: [ AppComponent ],
   exports: [AppComponent],
 })

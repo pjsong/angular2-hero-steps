@@ -11,8 +11,4 @@ import {BottomRouter} from "../../bottomnav/ngb2/bottomrouter.component";
 export default class ProductItemComponent {
   @Input() product: Product;
   constructor(private shop: BottomRouter){}
-
-  public resetPageWaiting(){
-    this.shop.resetPageWaiting();
-  }
 }

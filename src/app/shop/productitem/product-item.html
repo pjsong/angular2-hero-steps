@@ -1,5 +1,5 @@
 <div class="thumbnail">
-  <a (click)="resetPageWaiting()" [routerLink]="['products', product.id]">
+  <a [routerLink]="['products', product.id]">
   <img src="{{product.imgUrl}}">
   <div class="caption">
     <h4 class="pull-right">{{ product.price | currency }}</h4>
@@ -7,8 +7,8 @@
     <p>{{ product.description }}</p>
   </div>
   </a>
-  <a (click)="resetPageWaiting()" class="btn btn-success">Buy Now</a>
-  <a (click)="resetPageWaiting()" class="btn btn-info">Detail</a>
+  <a class="btn btn-success" [routerLink]="['products', product.id]">Buy Now</a>
+  <a class="btn btn-info" [routerLink]="['products', product.id]">Detail</a>
   <div class="ratings">
     <auction-stars [rating]="product.rating"></auction-stars>
   </div>

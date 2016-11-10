@@ -66,7 +66,6 @@ export class GameZombie implements OnInit {
         n++;
       }
     }
-    this.bottomRouter.resetPageWaiting();
   }
 
   inc(i:number, j:number) {
@@ -102,7 +101,6 @@ export class GameZombie implements OnInit {
         clearInterval(this.intervalCounter );
         this.gameResult.over = true;
         this.gameResult.text = "over";
-        this.bottomRouter.resetPageWaiting();
         return;
       } else {
         this.boardReveal(i, j);
@@ -120,7 +118,6 @@ export class GameZombie implements OnInit {
         clearInterval(this.intervalCounter );
         this.gameResult.won = true;
         this.gameResult.text = "won";
-        this.bottomRouter.resetPageWaiting();
       }
     }
   }

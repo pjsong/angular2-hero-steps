@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ShopMenuComponent} from "./shopmenu.component";
 import {ShopComponent} from "../shop/shop.component";
 import {PaginationDemoComponent} from "../ngb2/pagination.component";
-import ProductDetailComponent from "../productdetail/product-detail";
+import ProductDetailComponent from "../productdetail/product-detail.component";
 
 const shopmenuRoutes:Routes = [{
   path: '',

@@ -11,11 +11,12 @@ import {BottomRouter} from "../../bottomnav/ngb2/bottomrouter.component";
 import {Words} from "../../fun/ngb2/words/words.component";
 import {_404Component} from "../../common/404";
 import {ProductService} from "../../services/product-service";
+import {TopBanner} from "../../topbanner/ngb2/topbanner.component";
 
 
 @NgModule({
   imports: [ BrowserModule, Ng2BootstrapModule, BottomRouterRoutingModule],
-  declarations: [ BottomRouter, _404Component, Homepage, GameZombie, Fun, MemberComponent,  Words,
+  declarations: [ TopBanner,  BottomRouter, _404Component, Homepage, GameZombie, Fun, MemberComponent, Words
   ],
   providers: [
     ProductService,

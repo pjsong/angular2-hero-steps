@@ -23,10 +23,10 @@ const appRoutes: Routes = [
     path: 'game',
     component: GameZombie
   },
-  // {
-  //   path: 'fun',
-  //   component: Fun
-  // },
+  {
+    path: 'fun',
+    component: Fun
+  },
   {
     path: 'member',
     component: MemberComponent

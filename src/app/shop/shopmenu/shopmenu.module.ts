@@ -5,7 +5,7 @@ import {Ng2BootstrapModule, } from 'ng2-bootstrap/ng2-bootstrap';
 
 import {PaginationDemoComponent} from "../ngb2/pagination.component";
 import {ShopComponent} from "../shop/shop.component";
-import ProductDetailComponent from "../productdetail/product-detail";
+import ProductDetailComponent from "../productdetail/product-detail.component";
 import ProductItemComponent from "../productitem/product-item";
 import StarsComponent from "../stars/stars";
 import {ProductService} from "../../services/product-service";

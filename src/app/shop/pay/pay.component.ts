@@ -1,21 +1,18 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { BottomRouter } from '../../bottomnav/ngb2/bottomrouter.component';
-
-
 // webpack html imports
-let template = require('./fun.component.html');
+let template = require('./pay.component.html');
 
 @Component({
   selector: 'fun',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: template,
-  styleUrls: ['./fun.component.scss'],
+  styleUrls: ['./pay.component.scss'],
 })
 
-export class Fun {
+export class Pay {
   public tabs:Array<any> = [
-    {title: 'Video', content: 'Dynamic content 1'},
+    {title: '现金支付', content: 'Dynamic content 1'},
     {title: 'Articles', content: 'Dynamic content 2', disabled: false},
     {title: 'Help', content: 'Dynamic content 3', removable: true},
     {title: 'Cooperation', content: 'Dynamic content 3', removable: true}

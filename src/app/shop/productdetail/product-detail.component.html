@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="thumbnail col-sm-4 col-lg-4 col-md-4">
+  <img src="{{product.imgUrl}}">
+
+  </div>
+  <div class="col-sm-8 col-lg-8 col-md-8">
+    <div>
+      <!--<h4 class="pull-right">{{ product.price }}</h4>-->
+      <h4>{{ product.title }}: {{ product.price }}</h4>
+      <p>{{ product.description }}</p>
+    </div>
+    <div class="ratings">
+      <!--<p class="pull-right">{{ reviews.length }} reviews</p>-->
+      <p><auction-stars [rating]="product.rating" ></auction-stars></p>
+    </div>
+    <hr/>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="cashModal.show()">现金支付</button>
+      <button type="button" class="btn btn-primary" (click)="zhifubaoModal.show()">支付宝支付</button>
+    </div>
+  </div>
+
+  <div class="modal fade" bsModal #cashModal="bs-modal" [config]="{backdrop: 'static'}"
+       tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" (click)="cashModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">{{cashPayTitle}}</h4>
+        </div>
+        <div class="modal-body">
+          <div *ngFor="let desc of cashPayDesc">
+            <label>{{desc}}</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" bsModal #zhifubaoModal="bs-modal" [config]="{backdrop: 'static'}"
+       tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-label="Close" (click)="zhifubaoModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">{{zhifubaoPayTitle}}</h4>
+        </div>
+        <div class="modal-body">
+          <div *ngFor="let desc of cashPayDesc">
+            <label>{{desc}}</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

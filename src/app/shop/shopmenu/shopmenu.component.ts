@@ -14,25 +14,19 @@ export class ShopMenuComponent implements OnInit {
   public menuItem:string = 'All';
   public items:Array<string> = ['first', 'second', 'third'];
 
-  constructor(private bottomRouter: BottomRouter, private router:ActivatedRoute){ //
+  constructor(private router:ActivatedRoute){ //
 
   }
 
   ngOnInit(){
   }
 
-  private resetPageWaiting(){
-    this.bottomRouter.resetPageWaiting();
-  }
-
   public toggled(open:boolean):void {
     console.log('Dropdown is now:', open);
-    this.resetPageWaiting();
   }
 
   loadList(menuClicked: string){
     console.log(menuClicked);
-    this.resetPageWaiting();
   }
 
 }
