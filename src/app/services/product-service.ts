@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+var constants = require('../globalconst');
 
 export class Product {
   constructor(
@@ -23,10 +24,11 @@ export class Review {
   }
 }
 
-const IMG_PREFIX='http://172.18.0.3/static/images/vendor/front/shoptest/car';
+const IMG_PREFIX_SHOPTEST: string=constants.GLOBALIMGPREFIX + 'shoptest/car';
 
 @Injectable()
 export class ProductService {
+
   getProducts(): Product[] {
     return products.map(p => new Product(p.id, p.imgUrl, p.title, p.price, p.rating, p.description, p.categories));
   }
@@ -49,7 +51,7 @@ export class ProductService {
 var products = [
   {
     "id": 0,
-    "imgUrl":IMG_PREFIX + '1.jpg',
+    "imgUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
     "title": "First Product",
     "price": 24.99,
     "rating": 4.3,
@@ -58,7 +60,7 @@ var products = [
   },
   {
     "id": 1,
-    "imgUrl":IMG_PREFIX + '1.jpg',
+    "imgUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
     "title": "Second Product",
     "price": 64.99,
     "rating": 3.5,
@@ -67,7 +69,7 @@ var products = [
   },
   {
     "id": 2,
-    "imgUrl":IMG_PREFIX + '2.jpg',
+    "imgUrl":IMG_PREFIX_SHOPTEST + '2.jpg',
     "title": "Third Product",
     "price": 74.99,
     "rating": 4.2,
@@ -76,7 +78,7 @@ var products = [
   },
   {
     "id": 3,
-    "imgUrl":IMG_PREFIX + '3.jpg',
+    "imgUrl":IMG_PREFIX_SHOPTEST + '3.jpg',
     "title": "Fourth Product",
     "price": 84.99,
     "rating": 3.9,
@@ -85,7 +87,7 @@ var products = [
   },
   {
     "id": 4,
-    "imgUrl":IMG_PREFIX + '4.jpg',
+    "imgUrl":IMG_PREFIX_SHOPTEST + '4.jpg',
     "title": "Fifth Product",
     "price": 94.99,
     "rating": 5,
@@ -94,7 +96,7 @@ var products = [
   },
   {
     "id": 5,
-    "imgUrl":IMG_PREFIX + '5.jpg',
+    "imgUrl":IMG_PREFIX_SHOPTEST + '5.jpg',
     "title": "Sixth Product",
     "price": 54.99,
     "rating": 4.6,
@@ -103,7 +105,7 @@ var products = [
   },
   {
     "id": 6,
-    "imgUrl":IMG_PREFIX + '1.jpg',
+    "imgUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
     "title": "Sixth Product",
     "price": 54.99,
     "rating": 4.6,

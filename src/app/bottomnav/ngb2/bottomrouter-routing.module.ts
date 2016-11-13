@@ -8,12 +8,17 @@ import {ShopMenuComponent} from "../../shop/shopmenu/shopmenu.component";
 import {CategoryRouter} from "../../shop/ngb2/categoryrouter.component";
 import {_404Component} from "../../common/404";
 import {PreloadSelectedModules} from "../../selective-preload-strategy";
+import {SlotSelect} from "../../homepage/slotselect.component";
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'homepage',
+    redirectTo: 'slotselect',
     pathMatch: 'full'
+  },
+  {
+    path: 'slotselect',
+    component: SlotSelect
   },
   {
     path: 'homepage',
