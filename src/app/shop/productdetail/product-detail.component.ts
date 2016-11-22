@@ -29,27 +29,29 @@ export default class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.product = this.productService.getProductById(this.productId);
-    this.reviews = this.productService.getReviewsForProduct(this.product.id);
+    // this.product = this.productService.getProductById(this.productId);
+    console.log(this.productId)
+    this.productService.getProductById(this.productId).then(product => {console.log(product);this.product = product})
+    // this.reviews = this.productService.getReviewsForProduct(this.product.id);
   }
 
-  addReview() {
-    let review = new Review(0, this.product.id, new Date(), 'Anonymous',
-        this.newRating, this.newComment);
-    this.reviews = [...this.reviews, review];
-    this.product.rating = this.averageRating(this.reviews);
+  // addReview() {
+  //   let review = new Review(0, this.product.id, new Date(), 'Anonymous',
+  //       this.newRating, this.newComment);
+  //   this.reviews = [...this.reviews, review];
+  //   // this.product.rating = this.averageRating(this.reviews);
+  //
+  //   this.resetForm();
+  // }
 
-    this.resetForm();
-  }
-
-  averageRating(reviews: Review[]) {
-    let sum = reviews.reduce((average, review) => average + review.rating, 0);
-    return sum / reviews.length;
-  }
-
-  resetForm() {
-    this.newRating = 0;
-    this.newComment = null;
-    this.isReviewHidden = true;
-  }
+  // averageRating(reviews: Review[]) {
+  //   let sum = reviews.reduce((average, review) => average + review.rating, 0);
+  //   return sum / reviews.length;
+  // }
+  //
+  // resetForm() {
+  //   this.newRating = 0;
+  //   this.newComment = null;
+  //   this.isReviewHidden = true;
+  // }
 }

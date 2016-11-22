@@ -36,7 +36,7 @@ export class SlotSelect {
     if(this.tipMessage == "请输入货道编号"){
       this.inputboxClicked()
     }
-    if(this.tipMessage.length == 3){
+    if(this.tipMessage.length >= 3 && numObj.val != 10){
       return
     }
     if(numObj.val==10){

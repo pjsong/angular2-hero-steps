@@ -1,15 +1,16 @@
 import {Injectable} from '@angular/core';
+import {Http, Response, Headers, RequestOptions} from '@angular/http'
 var constants = require('../globalconst');
 
 export class Product {
   constructor(
     public id: number,
-    public imgUrl: string,
-    public title: string,
-    public price: number,
-    public rating: number,
-    public description: string,
-    public categories: string[]) {
+    public imageListUrl: string,
+    public productName: string,
+    public saleUnitPrice: number,
+    public productSummary: string,
+    public productDesc: string)
+  {
   }
 }
 
@@ -28,13 +29,27 @@ const IMG_PREFIX_SHOPTEST: string=constants.GLOBALIMGPREFIX + 'shoptest/car';
 
 @Injectable()
 export class ProductService {
+  constructor(private http: Http){}
 
-  getProducts(): Product[] {
-    return products.map(p => new Product(p.id, p.imgUrl, p.title, p.price, p.rating, p.description, p.categories));
+  getProducts(): Promise<Product[]>{
+    // return products.map(p => new Product(p.id, p.imageListUrl, p.productName, p.saleUnitPrice, p.productSummary, p.productDesc));
+
+    let reqHeaders = new Headers();
+    reqHeaders.append('Content-type', 'application/json;charset=utf8');
+    // reqHeaders.append('Accept', 'application/json');
+    // reqHeaders.append('Username', 'pjsong');
+    // reqHeaders.append('Password', 'pjsong3101');
+    // reqHeaders.append('Authorization', 'Basic '+btoa('pjsong:pjsong3101'));
+    let reqOptions = new RequestOptions({headers: reqHeaders})
+    return this.http.get('http://172.18.0.4/api/data/product/?format=json') //{headers: reqHeaders}
+      .toPromise().then(res=>{ console.log(res.json());return res.json() as Product[]})
+      .catch(error=>console.error('add products error'));
   }
 
-  getProductById(productId: number): Product {
-    return products.find(p => p.id === productId);
+  getProductById(productId: number): Promise<Product> {
+    // return products.find(p => p.id === productId);
+     return this.http.get('http://172.18.0.4/api/data/product/'+productId+'/?format=json')
+       .toPromise().then(res => {console.log(res.json());return res.json() as Product})
   }
 
   getReviewsForProduct(productId: number): Review[] {
@@ -43,74 +58,75 @@ export class ProductService {
       .map(r => new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.comment));
   }
 
-  getAllCategories(): string[] {
+  getAllcategory(): string[] {
     return ['Books', 'Electronics', 'Hardware'];
   }
 }
 
 var products = [
   {
+    "id": 7,
+    "imageListUrl": "http://172.18.0.3/static/images/vendor/front/604.jpeg",
+    "productName": "避孕套",
+    "saleUnitPrice": 12,
+    "productSummary": "避孕套避孕套",
+    "productDesc": "避孕套避孕套避孕套"
+  },
+  {
     "id": 0,
-    "imgUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
-    "title": "First Product",
-    "price": 24.99,
-    "rating": 4.3,
-    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "categories": ["electronics", "hardware"]
+    "imageListUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
+    "productName": "abc",
+    "saleUnitPrice": 24.99,
+    "productSummary": "First Product",
+    "productDesc": "This is a short productDesc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     "id": 1,
-    "imgUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
-    "title": "Second Product",
-    "price": 64.99,
-    "rating": 3.5,
-    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "categories": ["books"]
+    "imageListUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
+    "productName": "abc",
+    "saleUnitPrice": 64.99,
+    "productSummary": "Second Product",
+    "productDesc": "This is a short productDesc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     "id": 2,
-    "imgUrl":IMG_PREFIX_SHOPTEST + '2.jpg',
-    "title": "Third Product",
-    "price": 74.99,
-    "rating": 4.2,
-    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "categories": ["electronics"]
+    "imageListUrl":IMG_PREFIX_SHOPTEST + '2.jpg',
+    "productName": "abc",
+    "productSummary": "Third Product",
+    "saleUnitPrice": 74.99,
+    "productDesc": "This is a short productDesc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     "id": 3,
-    "imgUrl":IMG_PREFIX_SHOPTEST + '3.jpg',
-    "title": "Fourth Product",
-    "price": 84.99,
-    "rating": 3.9,
-    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "categories": ["hardware"]
+    "imageListUrl":IMG_PREFIX_SHOPTEST + '3.jpg',
+    "productName": "abc",
+    "productSummary": "Fourth Product",
+    "saleUnitPrice": 84.99,
+    "productDesc": "This is a short productDesc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     "id": 4,
-    "imgUrl":IMG_PREFIX_SHOPTEST + '4.jpg',
-    "title": "Fifth Product",
-    "price": 94.99,
-    "rating": 5,
-    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "categories": ["electronics", "hardware"]
+    "imageListUrl":IMG_PREFIX_SHOPTEST + '4.jpg',
+    "productName": "abc",
+    "productSummary": "Fifth Product",
+    "saleUnitPrice": 94.99,
+    "productDesc": "This is a short productDesc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     "id": 5,
-    "imgUrl":IMG_PREFIX_SHOPTEST + '5.jpg',
-    "title": "Sixth Product",
-    "price": 54.99,
-    "rating": 4.6,
-    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "categories": ["books"]
+    "imageListUrl":IMG_PREFIX_SHOPTEST + '5.jpg',
+    "productName": "abc",
+    "productSummary": "Sixth Product",
+    "saleUnitPrice": 54.99,
+    "productDesc": "This is a short productDesc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     "id": 6,
-    "imgUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
-    "title": "Sixth Product",
-    "price": 54.99,
-    "rating": 4.6,
-    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "categories": ["books"]
+    "imageListUrl":IMG_PREFIX_SHOPTEST + '1.jpg',
+    "productName": "abc",
+    "productSummary": "Sixth Product",
+    "saleUnitPrice": 54.99,
+    "productDesc": "This is a short productDesc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   }
 ];
 

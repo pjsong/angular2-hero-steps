@@ -24,7 +24,9 @@ export class ShopComponent implements OnInit{
   constructor(private productService: ProductService){}
 
   public getProducts(): void{
-    this.products = this.productService.getProducts();
+    // this.products = this.productService.getProducts();
+    this.productService.getProducts().then(products=> { this.products=products});
+
   }
   public ngOnInit(): void{
     this.getProducts();

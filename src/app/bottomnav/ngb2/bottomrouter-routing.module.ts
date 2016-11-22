@@ -9,6 +9,8 @@ import {CategoryRouter} from "../../shop/ngb2/categoryrouter.component";
 import {_404Component} from "../../common/404";
 import {PreloadSelectedModules} from "../../selective-preload-strategy";
 import {SlotSelect} from "../../homepage/slotselect.component";
+import {HttpModule} from "@angular/http";
+import {MoneyChargeService} from "../../services/moneycharge-service";
 
 const appRoutes: Routes = [
   {
@@ -59,12 +61,13 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(appRoutes,{ preloadingStrategy: PreloadSelectedModules })
+    , HttpModule
   ],
   exports: [
     RouterModule
   ],
   providers: [
-    PreloadSelectedModules,
+    PreloadSelectedModules, MoneyChargeService
   ]
 })
 export class BottomRouterRoutingModule {}

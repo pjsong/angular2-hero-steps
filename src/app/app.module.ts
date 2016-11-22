@@ -7,6 +7,7 @@ import { AppComponent }  from './app.component';
 
 import { TopBanner } from './topbanner/ngb2/topbanner.component';
 import { BottomRouterModule } from "./bottomnav/ngb2/bottomrouter.module";
+import {HttpModule} from "@angular/http";
 
 
 

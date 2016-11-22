@@ -43,8 +43,10 @@
       }
 
       public ngOnInit(): void{
-        this.products = this.productService.getProducts();
+        // this.products = this.productService.getProducts()
+        this.productService.getProducts().then(products=>this.products = products)
       }
+
 
       public pageChanged(event:any):void {
         console.log('Page changed to: ' + event.page);
