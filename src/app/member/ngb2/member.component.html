@@ -1,49 +1,46 @@
-<div class="member">
-
-  <div *ngIf="loginErrorMsg">
-    <label class="has-error">{{loginErrorMsg}}</label>
-  </div>
-
-    <div class="container-fluid">
-      <div class="input-group col-md-12">
-        <span class="input-group-addon" id="usernameInputLabel">登录名称</span>
-        <input class="form-control" type="text" name="userInput" aria-describedby="usernameInputLabel" readonly [(ngModel)]="userInput" (click)="inputClicked($event)">
-      </div>
-      <!--<div class="col-md-10">-->
-        <!--<input class="form-control" type="text" name="userInput" readonly [(ngModel)]="userInput" (click)="inputClicked($event)">-->
-      <!--</div>-->
-      <div class="col-md-12">
-        <div *ngIf="userNameKBDisplay">
-          <div *ngFor='let u of keyboardRow' >
-            <div class="col-xs-1 col-md-1">
-              <button class="btn btn-primary" name="userInput" value="{{u.val}}" (click)="clickButton(u, 'userInput')">
-                {{u.displayValue}}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="btn-group btn-group-justified">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="navCollapsed = !navCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a (click)="loadList('AllCategory')" class="navbar-brand" routerLink="shop" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
+        操作菜单
+      </a>
     </div>
 
+    <div class="collapse navbar-collapse" [ngClass]="!navCollapsed && 'in'" >
+      <ul class="nav navbar-nav">
+        <li><a (click)="loadList(pagination)" routerLink="cashcharge" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
+          shop/Pagination</a></li>
+        <li dropdown (onToggle)="toggled($event)">
+          <a dropdownToggle>Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">cat/Action</a></li>
+            <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>
+            <li class="divider" dropdown-divider></li>
+            <li><a [routerLink]='["cat","SomethingElse"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Something else here</a></li>
+            <li><a >Separated link</a></li>
+            <li><a [routerLink]='["cat","oneMoreLink"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">One more separated link</a></li>
+          </ul>
+        </li>
 
-
-    <div class="container-fluid">
-      <div class="input-group col-md-12">
-        <span class="input-group-addon" id="passwordInputLabel">登入密码</span>
-        <input class="form-control" type="password" name="passwordInput" readonly [(ngModel)]="passwordInput" (click)="inputClicked($event)">
-      </div>
-      <div class="col-md-12">
-        <div *ngIf="passwordKBDisplay">
-          <div *ngFor='let u of keyboardRow' >
-            <div class="col-xs-1 col-md-1">
-              <button class="btn btn-primary" value="{{u.val}}" (click)="clickButton(u, 'passwordInput')">
-                {{u.displayValue}}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+        <li dropdown (onToggle)="toggled($event)">
+          <a dropdownToggle (onToggle)="toggled($event)">Just a clone<span class='caret'></span></a>
+          <ul class="dropdown-menu" >
+            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">ActionClone</a></li>
+            <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>
+            <li><a [routerLink]='["cat","somethingElse"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Something else here</a></li>
+            <li><a >Separated link</a></li>
+            <li><a [routerLink]='["cat","onceMore"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-
+  </nav>
 </div>
+<router-outlet></router-outlet>
+

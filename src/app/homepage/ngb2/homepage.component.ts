@@ -39,7 +39,6 @@ export class Homepage {
       ,'http://172.18.0.3/static/images/vendor/front/hot_saaya_irie_pictures_25.jpg'
       ,'http://172.18.0.3/static/images/vendor/front/12152209-1-26005.jpg'
       ,'http://172.18.0.3/static/images/vendor/front/s-media-cache-ak0.pinimg.com--736x--59--95--d8--5995d8fd60f5521741c45b0d3869342c.jpg.jpg'
-      ,'https://rate.nyo.me/pub/0000/38.jpg'
       ,'http://172.18.0.3/static/images/vendor/front/ffeef6b1d069cbe76944fa6048ad1f48.jpg'
       ,'http://172.18.0.3/static/images/vendor/front/3017_1280x800.jpg'
       ,'http://172.18.0.3/static/images/vendor/front/japanese-girl-71586.jpg'

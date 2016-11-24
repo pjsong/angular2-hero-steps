@@ -11,6 +11,7 @@ import {PreloadSelectedModules} from "../../selective-preload-strategy";
 import {SlotSelect} from "../../homepage/slotselect.component";
 import {HttpModule} from "@angular/http";
 import {MoneyChargeService} from "../../services/moneycharge-service";
+import {AuthGuard} from "../../services/auth/auth-guard.service";
 
 const appRoutes: Routes = [
   {
@@ -36,19 +37,16 @@ const appRoutes: Routes = [
   },
   {
     path: 'member',
-    component: MemberComponent
+    loadChildren: '../../member/ngb2/member.module#MemberModule',
+    canLoad: [AuthGuard],
+    // data: {
+    //   preload: true
+    // }
   },
 
   {
     path: 'shopmenu',
     loadChildren: '../../shop/shopmenu/shopmenu.module#ShopmenuModule',
-    data: {
-      preload: true
-    }
-  },
-  {
-    path: 'crisis-center',
-    loadChildren: '../../crisis-center/crisis-center.module#CrisisCenterModule',
     data: {
       preload: true
     }
