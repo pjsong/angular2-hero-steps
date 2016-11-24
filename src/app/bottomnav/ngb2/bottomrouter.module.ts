@@ -13,6 +13,7 @@ import {_404Component} from "../../common/404";
 import {ProductService} from "../../services/product-service";
 import {TopBanner} from "../../topbanner/ngb2/topbanner.component";
 import {SlotSelect} from "../../homepage/slotselect.component";
+import {MemberService} from "../../services/member-service";
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {SlotSelect} from "../../homepage/slotselect.component";
   declarations: [ TopBanner,  BottomRouter, _404Component, Homepage, SlotSelect, GameZombie, Fun, MemberComponent, Words
   ],
   providers: [
-    ProductService,
+    ProductService
   ],
   exports:[BottomRouter],
 })

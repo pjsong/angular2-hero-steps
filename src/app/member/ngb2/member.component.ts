@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import {MoneyChargeService} from "../../services/moneycharge-service";
+import {HttpUtils} from "../../services/http-util";
+import {Http} from "@angular/http";
 
-// webpack html imports
 let template = require('./member.component.html');
 const userTipMessage:string = "请输入登录名"
 const passwordTipMessage :string = "请输入密码"
-
+var httpUtils = require('../../services/http-util')
 
 @Component({
   selector: 'member',
@@ -62,7 +63,7 @@ export class MemberComponent {
     , {"val":"clear", "displayValue" :"清空"}
     , {"val":"enter", "displayValue" :"完成"}
   ]
-  public constructor() {
+  public constructor(private http: Http) {
   }
 
   shiftClick(numObj: any){
@@ -126,7 +127,7 @@ export class MemberComponent {
     }else if(numObj.val=="enter"){
        name=="userInput"? this.userNameKBDisplay = false : this.passwordKBDisplay = false;
        if(name=="passwordInput"){
-         this.login()
+         this.login(this.userInput, this.passwordInput)
        }
     }else {
       if([userTipMessage, passwordTipMessage].some(x => x ==this.keyboardInput)){
@@ -139,8 +140,17 @@ export class MemberComponent {
   }
 
 
-  login(){
-     this.loginErrorMsg = "用户名/密码错误"
+  login(username: string, password: string){
+    new HttpUtils(this.http).POST('http://172.18.0.4/api/data/api-token-auth/', {"username": username, "password": password})
+      .subscribe(
+        (data:any)=>{
+          localStorage.setItem("token", data.token);
+          this.loginErrorMsg = "成功";
+          console.log(data)
+        },
+        (err:any) => {this.loginErrorMsg = "用户名/密码错误"; this.userInput=""; this.passwordInput=""}
+      );
+
   }
 }
 
