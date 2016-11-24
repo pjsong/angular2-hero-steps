@@ -13,42 +13,46 @@ let template = require('./slotselect.component.html');
 
 export class SlotSelect {
   tipMessage: string = "请输入货道编号"
+  keyboardDisplay: boolean = false
   keyboardImgsRow1: Array<any> = [
-    {"val":1, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk00n.png'}
-    , {"val":2, "url" :globalConst.GLOBALIMGPREFIX + 'keyboard/pk01n.png'}
-    , {"val":3, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk02n.png'}
-    , {"val":0, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk09n.png'}
-    , {"val":4, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk03n.png'}
-    , {"val":5, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk04n.png'}
-    , {"val":6, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk05n.png'}
-    , {"val":10, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk38.png'}
-    , {"val":7, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk06n.png'}
-    , {"val":8, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk07n.png'}
-    , {"val":9, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk08n.png'}
-    , {"val":11, "url" : globalConst.GLOBALIMGPREFIX + 'keyboard/pk39n.png'}
+    {"val":1, "displayValue" : "1"}
+    , {"val":2, "displayValue" : "2"}
+    , {"val":3, "displayValue" : "3"}
+    , {"val":0, "displayValue" : "0"}
+    , {"val":4, "displayValue" : "4"}
+    , {"val":5, "displayValue" : "5"}
+    , {"val":6, "displayValue" : "6"}
+    , {"val":10, "displayValue" : "后退"}
+    , {"val":7, "displayValue" : "7"}
+    , {"val":8, "displayValue" : "8"}
+    , {"val":9, "displayValue" : "9"}
+    , {"val":11, "displayValue" :"完成"}
   ]
   public constructor(private productService: ProductService) {
   }
   inputboxClicked(){
-    this.tipMessage = '';
+    this.keyboardDisplay = !this.keyboardDisplay
   }
+
   clickButton(numObj:any){
-    if(this.tipMessage == "请输入货道编号"){
-      this.inputboxClicked()
-    }
-    if(this.tipMessage.length >= 3 && numObj.val != 10){
+    if(this.tipMessage.length >= 3 && numObj.val != 10 && this.tipMessage != "请输入货道编号"){
+      this.keyboardDisplay = !this.keyboardDisplay
       return
     }
+
     if(numObj.val==10){
-      if(this.tipMessage.length>0) {
+      if(this.tipMessage.length > 1) {
         this.tipMessage = this.tipMessage.substr(0, this.tipMessage.length - 1);
       }else{
         this.tipMessage = "请输入货道编号"
       }
     }else if(numObj.val != 11){
+      if(this.tipMessage == "请输入货道编号"){
+        this.tipMessage = '';
+      }
       this.tipMessage += numObj.val;
     }else{
-
+      this.keyboardDisplay = !this.keyboardDisplay
     }
     console.log(numObj.val)
   }

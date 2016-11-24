@@ -1,8 +1,49 @@
 <div class="member">
-<a href="/">this is the member page</a>
-<div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
+
+  <div *ngIf="loginErrorMsg">
+    <label class="has-error">{{loginErrorMsg}}</label>
+  </div>
+
+    <div class="container-fluid">
+      <div class="input-group col-md-12">
+        <span class="input-group-addon" id="usernameInputLabel">登录名称</span>
+        <input class="form-control" type="text" name="userInput" aria-describedby="usernameInputLabel" readonly [(ngModel)]="userInput" (click)="inputClicked($event)">
+      </div>
+      <!--<div class="col-md-10">-->
+        <!--<input class="form-control" type="text" name="userInput" readonly [(ngModel)]="userInput" (click)="inputClicked($event)">-->
+      <!--</div>-->
+      <div class="col-md-12">
+        <div *ngIf="userNameKBDisplay">
+          <div *ngFor='let u of keyboardRow' >
+            <div class="col-xs-1 col-md-1">
+              <button class="btn btn-primary" name="userInput" value="{{u.val}}" (click)="clickButton(u, 'userInput')">
+                {{u.displayValue}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-fluid">
+      <div class="input-group col-md-12">
+        <span class="input-group-addon" id="passwordInputLabel">登入密码</span>
+        <input class="form-control" type="password" name="passwordInput" readonly [(ngModel)]="passwordInput" (click)="inputClicked($event)">
+      </div>
+      <div class="col-md-12">
+        <div *ngIf="passwordKBDisplay">
+          <div *ngFor='let u of keyboardRow' >
+            <div class="col-xs-1 col-md-1">
+              <button class="btn btn-primary" value="{{u.val}}" (click)="clickButton(u, 'passwordInput')">
+                {{u.displayValue}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
 </div>
