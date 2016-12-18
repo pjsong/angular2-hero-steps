@@ -1,9 +1,11 @@
 import { NgModule }     from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MemberComponent} from "./member.component";
-import {LoginComponent} from "../login/login.component";
 import CashChargeComponent from "../cashcharge/cashCharge";
 import {AuthGuard} from "../../services/auth/auth-guard.service";
+import OpsPageComponent from "../opspage/opspage.component";
+import DefaultComponent from "../default/default.component";
+import {TestControlBoardComponent} from "../testcontrolboard/testcontrolboard.component";
 
 
 const memberRoutes:Routes = [{
@@ -16,12 +18,25 @@ const memberRoutes:Routes = [{
       children: [
       {
         path: '',
-        redirectTo: 'cashcharge',
-        pathMatch: 'full',
+        // redirectTo: 'index',
+        component: DefaultComponent,
+        // pathMatch: 'full',
       }, {
-        path: 'cashcharge',
+        path: 'testslot',
+        component: TestControlBoardComponent,
+        },{
+          path: 'test/cashcharge',
+          component: CashChargeComponent,
+        },{
+          path: 'test/controlboard',
+          component: CashChargeComponent,
+        },{
+        path: 'ops',
+        component: OpsPageComponent,
+      },{
+        path: 'ops/cashcharge',
         component: CashChargeComponent,
-      },
+      }
   ]}]
 }]
 

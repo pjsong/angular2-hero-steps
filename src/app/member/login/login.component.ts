@@ -5,8 +5,8 @@ import {AuthService} from "../../services/auth/auth.service";
 import {Router} from "@angular/router";
 import {UserPrinciple} from "../../models/Module"
 let template = require('./login.component.html');
-const userTipMessage:string = "请输入登录名"
-const passwordTipMessage :string = "请输入密码"
+const userTipMessage:string = "pjsong" //"请输入登录名"
+const passwordTipMessage :string = "pjsong3101" //"请输入密码"
 var httpUtils = require('../../services/http-util')
 
 @Component({
@@ -64,7 +64,7 @@ export class LoginComponent {
     , {"val":"clear", "displayValue" :"清空"}
     , {"val":"enter", "displayValue" :"完成"}
   ]
-  public constructor(private http: Http, public authService: AuthService, public router: Router) {
+  public constructor(public authService: AuthService, public router: Router) {
   }
 
   shiftClick(numObj: any){
@@ -91,14 +91,6 @@ export class LoginComponent {
           }
         }
       })
-  }
-
-  enterClicked(name:string){
-    if(name == "userInput"){
-
-    }else if(name == "passwordInput"){
-
-    }
   }
 
   inputClicked(event: any){
@@ -143,6 +135,8 @@ export class LoginComponent {
 
   login(up: UserPrinciple): boolean{
     if(localStorage.getItem("token")){
+      let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/member';
+      this.router.navigate([redirect]);
       return true;
     }
     this.authService.login(up).subscribe(

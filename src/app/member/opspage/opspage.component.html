@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="form-group">
+    <div class="thumbnail">
+      <a [routerLink]="['products', product.id]">
+        <img src="{{product.imageListUrl}}">
+        <div class="caption">
+          <h4 class="pull-right">{{ product.saleUnitprice | currency }}</h4>
+          <h4>{{ product.productSummary }}</h4>
+          <p>{{ product.productDesc }}</p>
+        </div>
+      </a>
+      <a class="btn btn-success" [routerLink]="['products', product.id]">Buy Now</a>
+      <a class="btn btn-info" [routerLink]="['products', product.id]">Detail</a>
+      <!--<div class="ratings">-->
+      <!--<auction-stars [rating]="product.rating"></auction-stars>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>

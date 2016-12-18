@@ -1,0 +1,36 @@
+.container-fluid{
+  width: 65vw;
+}
+
+.input-group{
+  font-size: 2.5vw;
+  height: 5vw;
+  input{
+    height: 5vw;
+  }
+}
+.has-error{
+  color: red;
+}
+
+button{
+  width: 5vw;
+  height: 5vw;
+  font-size: 2vw;
+}
+button[value="shift"], button[value="backspace"], button[value="clear"], button[value="enter"]{
+  font-size: 1vw;
+}
+.loginButton{
+  font-size: 3vw;
+  //font-color: grey;
+  width: 18vw;
+  height:5vw;
+  background-color: #4cae4c;
+}
+.col-xs-3, .col-md-3{
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+}
+

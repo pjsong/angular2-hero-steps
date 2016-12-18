@@ -1,0 +1,47 @@
+<div class="member">
+
+  <div *ngIf="errorMsg">
+    <label class="has-error">{{errorMsg}}</label>
+  </div>
+
+  <div class="container-fluid">
+    <div class="input-group col-md-12">
+      <span class="input-group-addon" id="slotInputLabel">货道编号</span>
+      <input class="form-control" type="text" name="slotInput" aria-describedby="slotInputLabel" readonly [(ngModel)]="slotInput" (click)="inputClicked($event)">
+    </div>
+
+    <div class="col-md-5">
+      <div *ngIf="slotKBDisplay">
+        <div *ngFor='let u of keyboardRow' >
+          <div class="col-xs-3 col-md-3">
+            <button class="btn btn-primary" value="{{u.val}}" (click)="clickButton(u, 'slotInput')">
+              {{u.displayValue}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid">
+    <div class="input-group col-md-12">
+      <span class="input-group-addon" id="testCntInputLabel">转动次数</span>
+      <input class="form-control" type="text" name="testCntInput" readonly [(ngModel)]="testCntInput" (click)="inputClicked($event)">
+    </div>
+    <div class="col-md-5">
+      <div *ngIf="testCntKBDisplay">
+        <div *ngFor='let u of keyboardRow' >
+          <div class="col-xs-3 col-md-3">
+            <button class="btn btn-primary" value="{{u.val}}" (click)="clickButton(u, 'testCntInput')">
+              {{u.displayValue}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

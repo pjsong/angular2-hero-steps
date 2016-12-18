@@ -7,19 +7,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a (click)="loadList('AllCategory')" class="navbar-brand" routerLink="shop" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
-        操作菜单
-      </a>
+      <!--<a (click)="loadList('AllCategory')" class="navbar-brand" routerLink="shop" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">-->
+        <!--操作菜单-->
+      <!--</a>-->
+      <!--<a (click)="navCollapsed = !navCollapsed" class="navbar-brand" [(ngModel)]="catName" btnRadio="catName">-->
+        <!--操作菜单-->
+      <!--</a>-->
     </div>
 
     <div class="collapse navbar-collapse" [ngClass]="!navCollapsed && 'in'" >
       <ul class="nav navbar-nav">
-        <li><a (click)="loadList(pagination)" routerLink="cashcharge" routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">
-          shop/Pagination</a></li>
+        <li><a (click)="loadList(pagination)" routerLink="testslot" routerLinkActive="active" >
+          测试货道</a></li>
         <li dropdown (onToggle)="toggled($event)">
-          <a dropdownToggle>Dropdown <span class="caret"></span></a>
+          <a dropdownToggle>维护 <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
-            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">cat/Action</a></li>
+            <li><a [routerLink]='["ops","cashcharge"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">补零钞</a></li>
             <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>
             <li class="divider" dropdown-divider></li>
             <li><a [routerLink]='["cat","SomethingElse"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Something else here</a></li>
@@ -29,11 +32,10 @@
         </li>
 
         <li dropdown (onToggle)="toggled($event)">
-          <a dropdownToggle (onToggle)="toggled($event)">Just a clone<span class='caret'></span></a>
+          <a dropdownToggle (onToggle)="toggled($event)">测试<span class='caret'></span></a>
           <ul class="dropdown-menu" >
-            <li><a [routerLink]='["cat","Action"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">ActionClone</a></li>
+            <li><a [routerLink]='["test","controlboard"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">控制板</a></li>
             <li><a [routerLink]='["cat","AnotherAction"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Another action</a></li>
-            <li><a [routerLink]='["cat","somethingElse"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">Something else here</a></li>
             <li><a >Separated link</a></li>
             <li><a [routerLink]='["cat","onceMore"]' routerLinkActive="active" [(ngModel)]="catName" btnRadio="catName">One more separated link</a></li>
           </ul>
